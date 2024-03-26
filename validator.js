@@ -1,7 +1,6 @@
 let password = "";
 function validate(input, value) {
-  const regex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const regex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
   const str = value.trim();
   if (!str) {
     return "Filed is required";
@@ -41,7 +40,7 @@ function validate(input, value) {
   return null;
 }
 const obj = {
-  user_email: "aaa@aaa.aa",
+  user_email: "aa@aa.aa",
   user_name: "aas",
   user_lastname: "123",
   user_password: "123123",
